@@ -305,7 +305,7 @@ function desplazar(objeto){
 
     var x = setTimeout(function(){
     	desplazar(objeto);
-    }, 10);
+    }, 300);
 }
 
 /*
