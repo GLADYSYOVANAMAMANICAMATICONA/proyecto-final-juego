@@ -15,6 +15,11 @@ nav{
 	/*z-index: 4;
 	position: fixed;*/
 }
+
+a.block{
+	display: block;
+	border-radius: 15px;
+}
 .brand-logo img{
 	width: 80px;
 
@@ -141,14 +146,8 @@ color: #2AFF00; font-weight: bold;
 	left: 0;
 	
 }
-a.block{
-	display: block;
-	border-radius: 15px;
-}
 
- form a{
-	background: black;
-}
+
 .h2-play{
 	text-transform: uppercase;
 	font-weight: bold;
