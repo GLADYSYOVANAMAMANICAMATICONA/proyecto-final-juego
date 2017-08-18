@@ -11,22 +11,27 @@ body{
 }
 
 nav{
-	background-color: #E54E79;
+	background-color: black;
+	/*z-index: 4;
+	position: fixed;*/
 }
 .brand-logo img{
-	width: 60px;
+	width: 80px;
+
+
+	height: 30px;
 	margin-top: 10px;
 }
 .principal{
 	height: 100vh;
-	background-image: url(http://ridesharecodes.com/wp-content/uploads/2017/02/cropped-Lyft-Promo-Codes-car-1.jpg);
+	background-image: url("../img/fondoo.jpg");
 	background-attachment: fixed;
 	background-size: cover;
 	background-position: center;
 	position: relative;
 }
 .principal .caja-blanca{
-	background-color: rgba(237,233,226,1);
+	background: transparent;
 	position: absolute;
 	right: 0;
 	top: 16%;
@@ -37,15 +42,15 @@ nav{
 .principal .caja-blanca h2{
 	text-transform: uppercase;
 	font-weight: bold;
-	color: #00B2A9;;
+	color: #fb0f01;
 	font-size: 1.8em;
 }
 
 .principal .caja-blanca h3{
 	text-transform: uppercase;
 	font-weight: 300;
-	color: #75726C;
-	font-size: 1em;
+	color: white;
+	font-size: 2em;
 }
 
 .principal .caja-blanca .btn-big{
@@ -55,21 +60,25 @@ nav{
 	line-height: 45px;
 }
 
-.juego{
-	background-color: #00B2A9;
+#juego{
+	background-image: url("../img/laberinto.jpg");
+	background-size:100% 100%;
 	padding: 40px 0;
+
 }
 
-.contenedorjuego{
+#contenedorjuego{
 	margin: 0 auto;
-	background-color: #5A5959;
-	width: 70%;
+	background-image: url("../img/fondo3.jpg");
+	background-size:100% 100%;
+	width: 60%;
+	height: 450px;
 	padding: 10px;
 	position: relative;
 	border-radius: 20px;
 }
 
-.contenedorchico{
+#contenedorchico{
 	text-align: center;
 	margin: 0 auto;
 	width: 40%;
@@ -79,6 +88,17 @@ nav{
 	margin: 0px;
 	padding: 0px;
 	border: 0px;
+	-webkit-animation-name:parpadeo;
+	     -webkit-animation-duration: 5s;
+	     -webkit-animation-timing-function: linear;
+	     -webkit-animation-iteration-count: infinite;
+    }
+    @keyframes parpadeo {  
+			      0% { opacity: 1.0; }
+			      50% { opacity: 0.0; }
+			      100% { opacity: 1.0; }
+			    }
+	  
 }
 .h2-play:first-letter{
 	font-size: 80px;
@@ -102,14 +122,12 @@ color: #2AFF00; font-weight: bold;
 
 
 .boton:hover {
-border-radius: 5px;
- box-shadow: 0 5px 5px #313131, 0 9px 0 #393939, 0px 9px 10px rgba(0,0,0,0.4), inset 0px 2px 15px rgba(255,255,255,0.4), inset 0 -2px 9px rgba(0,0,0,0.2);
- color: #fff !important;
+	border-radius: 5px;
+	box-shadow: 0 5px 5px #313131, 0 9px 0 #393939, 0px 9px 10px rgba(0,0,0,0.4), inset 0px 2px 15px rgba(255,255,255,0.4), inset 0 -2px 9px rgba(0,0,0,0.2);
+	color: #fff !important;
 }
 
-}
-
-#tablero{
+#maps{
 	position: relative;
 	height: auto;
 	background-color: #EDE9E2;
@@ -127,14 +145,32 @@ a.block{
 	display: block;
 	border-radius: 15px;
 }
+
+ form a{
+	background: black;
+}
 .h2-play{
 	text-transform: uppercase;
 	font-weight: bold;
 	text-align: center;
-	color: #75726C;
+	color: #A90202;
 	margin-top: 40px;
 	margin-bottom: 80px;
 }
+
+#instrucciones .h2-play{
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+	color: #A90202;
+	margin-top: 40px;
+	margin-bottom: 10px;
+}
+
+#instrucciones, #creditos {
+	padding: 0 60px;
+}
+
 #tablero i{
 	color: #75726C;
 }
@@ -169,7 +205,8 @@ a.block{
 }
 
 .page-footer{
-	background-color: #75726C;
+	background-color: #A90202;
+	padding: 5px;
 }
 
 .tuerca{
@@ -177,7 +214,17 @@ a.block{
 	height: 80px;
 	background-image: url(../img/tuerca.png);
 	background-size: 100% 100%;
-}
+	-webkit-animation-name:parpadeo;
+	     -webkit-animation-duration: 5s;
+	     -webkit-animation-timing-function: linear;
+	     -webkit-animation-iteration-count: infinite;
+    }
+    @keyframes parpadeo {  
+			      0% { opacity: 1.0; }
+			      50% { opacity: 0.0; }
+			      100% { opacity: 1.0; }
+			    }
+
 
 #uno{
 
@@ -213,19 +260,103 @@ a.block{
 }
 
 
-p{
-	
-}
-#cssdiv{
+.p{
 	display: inline-block;
 	float: left;
-	position: relative;
 }
 
-#cssdiv2{
+.pp{
 	display: inline-block;
 	float: right;
-	position: relative;
+}
+
+.oculto {
+	display: none;
 }
 
 
+/*Sección juego*/
+.negro{
+	background-color: gray;
+	color: transparent;
+}
+
+.blanco{
+	color: transparent;
+}
+
+.final{
+	border-bottom: 3px solid red;
+	border-right: 3px solid red;
+	border-left: 3px solid red;
+	background-color: black;
+	color: transparent;
+}
+.inicio{
+	background-color: yellow;
+	color: yellow;
+}
+
+.imgf{
+	width: 35px;
+	height: 35px;
+}
+
+#tabla {
+	background-color: black;
+}
+
+#maps{
+	font-size: 1px;
+	margin: 0 auto;
+	background-color: #5A5959;
+	width: 95%;
+	height: 600px;
+	position: relative;
+	border-radius: 20px;
+}
+
+table {
+	width: 75%;
+    height: 40%;
+    display: table;
+    position: absolute;}
+
+td{
+	width: 12px;
+    height: 12px;
+    padding: 11px;
+}
+
+#redondo{
+	border: 0;
+    background: red;
+    position: absolute;
+    border-radius: 25px;
+    width: 12px;
+    height: 12px; 
+    padding: 0;
+}
+
+nav {
+	z-index: 4;
+	position: fixed;
+}
+
+.pasitos{
+	color: white;
+	text-align: center;
+}
+
+a{
+	background-color: black;
+}
+
+.small{
+	font-size: 20px;
+	color: white;
+}
+
+input{
+	color: #FFF000;
+}
